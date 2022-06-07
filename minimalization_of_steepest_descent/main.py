@@ -67,13 +67,13 @@ if __name__ == "__main__":
     r_init = (-0.75,1.75)
     h = 0.1
     MAX_ITERATION = 1000
-    epsilon = 0.01
+    epsilon = 0.001
 
     minimum = findMinimum(func,r_init,MAX_ITERATION,epsilon,delta,h)
-    # print(minimum)
+    print(minimum)
 
     points = generateStepPoints(func,r_init,MAX_ITERATION,epsilon,delta,h)
-    print(points)
+    # print(points)
 
     # plt.contourf(points[0],points[1],points[2])
 
