@@ -78,7 +78,7 @@ def plot_smoothed_function(f_array,N,t_max):
     x_points = []
     y_points = []
     while ind < len(f_array):
-        x_points.append(ind)
+        x_points.append(x)
         y_points.append(f_array[ind])
         x += step
         ind += 2
