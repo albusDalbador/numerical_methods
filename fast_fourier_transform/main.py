@@ -1,3 +1,4 @@
+from stat import FILE_ATTRIBUTE_INTEGRITY_STREAM
 import numpy as np
 import matplotlib.pyplot as plt
 from math import *
@@ -84,6 +85,15 @@ def plot_smoothed_function(f_array,N,t_max):
     plt.plot(x_points,y_points)
     plt.show()
 
+def normalize_function(f_array):
+    max_val = max(abs(f_array[::2]))
+    # ind = 0
+    # print(max_val)
+    normalized = []
+    for item in f_array:
+        normalized.append(item * 2.5 / max_val)
+    return normalized
+
 
 
 if __name__ == "__main__":
@@ -112,7 +122,9 @@ if __name__ == "__main__":
 
         f_inverse = np.fft.ifft(f_array)
 
-        plot_smoothed_function(f_inverse,N,t_max)
+        f_normalized = normalize_function(f_inverse)
+
+        plot_smoothed_function(f_normalized,N,t_max)
 
 
 
